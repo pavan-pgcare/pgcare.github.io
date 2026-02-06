@@ -1,5 +1,5 @@
 title: PGCare
-description: Notes on PostgreSQL reliability, operations and boring databases.
+description: Notes on PostgreSQL reliability, operations, and boring but critical databases.
 theme: minima
 markdown: kramdown
 permalink: /:title/
