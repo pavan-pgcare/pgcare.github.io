@@ -1,0 +1,7 @@
+title: PGCare
+description: Notes on PostgreSQL reliability, operations and boring databases.
+time: minima
+markdown: kramdown
+permalink: /:title/
+include:
+  - assets
