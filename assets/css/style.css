@@ -12,8 +12,8 @@ body {
 header {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 30px;
+  gap: 14px;
+  margin-bottom: 10px;
 }
 
 header img {
@@ -47,7 +47,7 @@ nav a:hover {
 
 .hero img {
   width: 100%;
-  max-height: 280px;
+  max-height: 220px;
   object-fit: contain;
 }
 
@@ -61,4 +61,8 @@ footer {
   border-top: 1px solid #e5e7eb;
   font-size: 0.9rem;
   color: #6b7280;
+}
+/* Disable Minima default header completely */
+.site-header {
+  display: none;
 }
