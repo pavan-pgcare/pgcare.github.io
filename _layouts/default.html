@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="PGCare">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="{{ page.title }} | PGCare">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  
+  <title>{{ page.title }} | PGCare</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="/" class="logo">
+          <img src="/assets/images/pg-elephant-hero.png" alt="PGCare Logo" class="logo-img">
+          <span class="logo-text">PGCare</span>
+        </a>
+        
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/blog.html" class="nav-link">Blog</a>
+          <a href="/services.html" class="nav-link">Services</a>
+          <a href="/about.html" class="nav-link">About</a>
+          <a href="#contact" class="nav-link nav-cta">Contact</a>
+        </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-title">PGCare</h3>
+          <p class="footer-desc">PostgreSQL reliability consulting for production environments.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="/services.html#backup">Backup & Recovery</a></li>
+            <li><a href="/services.html#monitoring">Monitoring</a></li>
+            <li><a href="/services.html#performance">Performance Tuning</a></li>
+            <li><a href="/services.html#migration">Migrations & Upgrades</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col" id="contact">
+          <h4 class="footer-heading">Get in Touch</h4>
+          <p class="footer-contact">
+            <a href="mailto:contact@pgcare.co.in">contact@pgcare.co.in</a>
+          </p>
+          <p class="footer-tagline">Let's make your PostgreSQL databases reliable and boring.</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 PGCare. All rights reserved.</p>
+        <p class="footer-credit">PostgreSQL Database Caretaker</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      toggle.classList.toggle('active');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-wrapper')) {
+        navLinks.classList.remove('active');
+        toggle.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
+
