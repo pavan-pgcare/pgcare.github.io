@@ -2,22 +2,33 @@
 layout: default
 title: PGCare
 ---
-<p>
-  <a href="/">Home</a> · <a href="/about.html">About</a>
-</p>
 
-<h1>PGCare</h1>
+<link rel="stylesheet" href="/assets/css/style.css">
 
-<p>
-Notes and practical thoughts on PostgreSQL reliability, operations,
-and long-running production databases.
-</p>
+<header>
+  <img src="/assets/images/pg-elephant-hero.png" alt="PostgreSQL Elephant">
+  <h1>PGCare</h1>
+</header>
 
-<hr />
+<nav>
+  <a href="/">Home</a>
+  <a href="/about.html">About</a>
+</nav>
+
+<section class="hero">
+  <p>
+    Notes and practical thoughts on <strong>PostgreSQL reliability</strong>,
+    operations, and long-running production databases.
+  </p>
+
+  <img src="/assets/images/pg-elephant-post.png" alt="PostgreSQL Reliability">
+</section>
+
+<hr>
 
 <h2>Posts</h2>
 
-<ul>
+<ul class="post-list">
   {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
@@ -26,10 +37,6 @@ and long-running production databases.
   {% endfor %}
 </ul>
 
-<p>
-<a href="{{ site.baseurl }}/posts/">All posts</a>
-</p>
-<hr />
-<p>
+<footer>
   © 2026 PGCare · PostgreSQL reliability notes
-</p>
+</footer>
