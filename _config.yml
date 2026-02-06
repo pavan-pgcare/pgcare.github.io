@@ -1,10 +1,65 @@
-title: ""
-description: Notes on PostgreSQL reliability, operations, and boring but critical databases.
+title: "PGCare"
+description: "PostgreSQL reliability consulting for production environments. Expert database administration, backup strategies, performance tuning, and disaster recovery planning."
+url: "https://pgcare.co.in"
+baseurl: ""
+
+# Author
+author:
+  name: "PGCare"
+  email: "contact@pgcare.co.in"
+
+# Build settings
 theme: minima
 markdown: kramdown
 permalink: /:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Include/Exclude
 include:
   - assets
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
 
-# Disable Minima header & nav
+# Disable Minima header & nav (we use custom)
 header_pages: []
+
+# SEO Settings
+lang: en_US
+twitter:
+  username: pgcare
+  card: summary
+
+# Social
+social:
+  name: PGCare
+  links:
+    - https://pgcare.co.in
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "PGCare"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Excerpt
+excerpt_separator: <!--more-->
+
+# Timezone
+timezone: Asia/Kolkata

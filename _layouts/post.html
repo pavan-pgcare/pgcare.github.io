@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-header-title">{{ page.title }}</h1>
+    <div class="post-header-meta">
+      <span class="post-date">
+        📅 {{ page.date | date: "%B %d, %Y" }}
+      </span>
+      {% if page.author %}
+      <span class="post-author">
+        ✍️ {{ page.author }}
+      </span>
+      {% endif %}
+      {% if page.reading_time %}
+      <span class="post-reading-time">
+        ⏱️ {{ page.reading_time }} min read
+      </span>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <!-- Post Navigation -->
+  <nav class="post-navigation">
+    {% if page.previous.url %}
+    <a href="{{ page.previous.url }}" class="post-nav-link">
+      <div class="post-nav-label">← Previous</div>
+      <div class="post-nav-title">{{ page.previous.title }}</div>
+    </a>
+    {% else %}
+    <div></div>
+    {% endif %}
+
+    {% if page.next.url %}
+    <a href="{{ page.next.url }}" class="post-nav-link">
+      <div class="post-nav-label">Next →</div>
+      <div class="post-nav-title">{{ page.next.title }}</div>
+    </a>
+    {% endif %}
+  </nav>
+</article>
+
