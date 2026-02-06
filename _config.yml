@@ -1,7 +1,10 @@
-title: PGCare
+title: ""
 description: Notes on PostgreSQL reliability, operations, and boring but critical databases.
 theme: minima
 markdown: kramdown
 permalink: /:title/
 include:
   - assets
+
+# Disable Minima header & nav
+header_pages: []
