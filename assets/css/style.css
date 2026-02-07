@@ -51,6 +51,12 @@ nav a:hover {
   object-fit: contain;
 }
 
+.post-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+
 .post-list li {
   margin-bottom: 10px;
 }
@@ -65,4 +71,26 @@ footer {
 /* Disable Minima default header completely */
 .site-header {
   display: none;
+}
+
+/* Content cards (Philosophy, sections, etc.) */
+.card {
+  max-width: 720px;
+  margin: 0 auto 2.5rem auto;
+  padding: 1.5rem 1.75rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  text-align: left;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+}
+
+.card p {
+  margin-bottom: 0.9rem;
+  line-height: 1.7;
 }
