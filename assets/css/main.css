@@ -346,6 +346,11 @@ pre code {
   margin: 0 auto;
 }
 
+/* Reduce top spacing for first section on inner pages */
+.section-top {
+  padding-top: 20px;   /* instead of 80px */
+}
+
 /* Card Styles */
 .card-grid {
   display: grid;

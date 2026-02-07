@@ -36,10 +36,9 @@
         </a>
         
         <div class="nav-links">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/blog.html" class="nav-link">Blog</a>
-          <a href="/services.html" class="nav-link">Services</a>
-          <a href="/about.html" class="nav-link">About</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+        <!--  <a href="{{ '/services/' | relative_url }}">Services</a>  -->
+          <a href="{{ '/blog/' | relative_url }}">Blog</a>
           <a href="#contact" class="nav-link nav-cta">Contact</a>
         </div>
         
@@ -64,7 +63,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <h3 class="footer-title">PGCare</h3>
-          <p class="footer-desc">PostgreSQL reliability consulting for production environments.</p>
+          <p class="footer-desc">PostgreSQL reliability for production environments.</p>
         </div>
         
         <div class="footer-col">
@@ -72,11 +71,11 @@
           <ul class="footer-links">
             <li><a href="/">Home</a></li>
             <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/services.html">Services</a></li>
+           <!-- <li><a href="/services.html">Services</a></li> -->
             <li><a href="/about.html">About</a></li>
           </ul>
         </div>
-        
+       <!-- 
         <div class="footer-col">
           <h4 class="footer-heading">Services</h4>
           <ul class="footer-links">
@@ -85,20 +84,20 @@
             <li><a href="/services.html#performance">Performance Tuning</a></li>
             <li><a href="/services.html#migration">Migrations & Upgrades</a></li>
           </ul>
-        </div>
+        </div> -->
         
         <div class="footer-col" id="contact">
           <h4 class="footer-heading">Get in Touch</h4>
           <p class="footer-contact">
             <a href="mailto:contact@pgcare.co.in">contact@pgcare.co.in</a>
           </p>
-          <p class="footer-tagline">Let's make your PostgreSQL databases reliable and boring.</p>
+          <p class="footer-tagline">Make your PostgreSQL databases reliable and boring.</p>
         </div>
       </div>
       
       <div class="footer-bottom">
         <p>&copy; 2026 PGCare. All rights reserved.</p>
-        <p class="footer-credit">PostgreSQL Database Caretaker</p>
+        <p class="footer-credit">PostgreSQL Database Care</p>
       </div>
     </div>
   </footer>
