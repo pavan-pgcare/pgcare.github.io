@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "Backup and Restore Strategy for Large PostGIS Clusters"
