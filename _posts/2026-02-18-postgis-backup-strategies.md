@@ -5,9 +5,10 @@ date: 2026-02-18
 author: PGCare
 tags: [postgresql, administration, performance,postgis]
 excerpt: "Logical dumps don’t scale for large PostGIS databases. This post breaks down physical backup strategy, WAL explosion risks, replication slot pitfalls, and why restore-time validation matters more than backup frequency in enterprise spatial systems "
----
-# Backup and Restore Strategy for Large PostGIS Clusters
 
+---
+
+# Introduction
 Backing up a 50GB database is routine.
 
 Backing up a 2TB PostGIS cluster is infrastructure engineering.
@@ -21,9 +22,9 @@ PostGIS changes backup planning because:
 
 This post focuses purely on operational reality.
 
----
 
-# 1️ Why Logical Dumps Stop Making Sense
+
+# Why Logical Dumps Stop Making Sense
 
 Check database size:
 
@@ -33,9 +34,9 @@ SELECT pg_size_pretty(pg_database_size(current_database()));
 
 If your PostGIS database is:
 
-* > 300GB → pg_dump becomes slow
-* > 500GB → restore time becomes operationally risky
-* > 1TB → logical restore is rarely acceptable for RTO
+> 300GB → pg_dump becomes slow
+> 500GB → restore time becomes operationally risky
+> 1TB → logical restore is rarely acceptable for RTO
 
 Why?
 
@@ -52,9 +53,8 @@ In real systems, a 1.5TB logical restore can take **10–20 hours**.
 
 That is not DR. That is downtime.
 
----
 
-# 2 Physical Backup Is the Baseline
+# Physical Backup Is the Baseline
 
 For large PostGIS clusters, physical backup is mandatory.
 
@@ -78,9 +78,9 @@ At multi-terabyte scale:
 
 Do not measure base backup on idle systems.
 
----
 
-# 3 WAL Archiving Is Not Optional
+
+# WAL Archiving Is Not Optional
 
 Enable WAL archiving:
 
@@ -110,9 +110,9 @@ Always monitor:
 * Replication slot retention
 * WAL generation spikes during spatial batch jobs
 
----
 
-# 4 Replication Slots: Hidden Disk Risk
+
+# Replication Slots: Hidden Disk Risk
 
 If using streaming replication or logical slots:
 
@@ -134,9 +134,9 @@ In PostGIS clusters, this can happen faster due to large row size.
 
 Alert on retained WAL size, not just replication delay in seconds.
 
----
 
-# 5 Restore Time Is the Real KPI
+
+# Restore Time Is the Real KPI
 
 Everyone measures backup success.
 
@@ -168,9 +168,9 @@ If your RTO expectation is 30 minutes,
 and you have never tested full restore,
 you are assuming.
 
----
 
-# 6 PostGIS-Specific Restore Considerations
+
+# PostGIS-Specific Restore Considerations
 
 PostGIS is not just tables.
 
@@ -190,9 +190,9 @@ Confirm:
 
 OS-level mismatch can break spatial functions even if restore succeeds.
 
----
 
-# 7 Backup Strategy Pattern That Works
+
+# Backup Strategy Pattern That Works
 
 For large PostGIS clusters:
 
@@ -204,9 +204,9 @@ For large PostGIS clusters:
 
 Never rely on a single method.
 
----
 
-# 8 What Actually Fails in Real Incidents
+
+# What Actually Fails in Real Incidents
 
 In real production incidents, failures are rarely:
 
@@ -222,7 +222,7 @@ They are:
 
 Backup strategy is capacity engineering, not checkbox compliance.
 
----
+
 
 # Final Operational Principle
 
