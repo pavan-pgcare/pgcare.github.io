@@ -1,15 +1,10 @@
-
 ---
 layout: post
 title: "Backup and Restore Strategy for Large PostGIS Clusters"
 date: 2026-02-18
 author: PGCare
-tags: [postgresql, administration, performance, postgis]
-excerpt: >
-  Logical dumps don’t scale for large PostGIS databases.
-  This post breaks down physical backup strategy, WAL explosion risks,
-  replication slot pitfalls, and why restore-time validation matters
-  more than backup frequency in enterprise spatial systems.
+tags: [PostgreSQL, Administration, PostGIS]
+excerpt: "Logical dumps don’t scale for large PostGIS databases. This post breaks down physical backup strategy, WAL explosion risks, replication slot pitfalls, and why restore-time validation matters more than backup frequency in enterprise spatial systems."
 ---
 
 # Introduction
@@ -40,7 +35,9 @@ SELECT pg_size_pretty(pg_database_size(current_database()));
 If your PostGIS database is:
 
 > 300GB → pg_dump becomes slow
+>
 > 500GB → restore time becomes operationally risky
+>
 > 1TB → logical restore is rarely acceptable for RTO
 
 Why?
